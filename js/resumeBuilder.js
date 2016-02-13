@@ -1,17 +1,3 @@
-// Hello.
-//
-// This is JSHint, a tool that helps to detect errors and potential
-// problems in your JavaScript code.
-//
-// To start, simply enter some JavaScript anywhere on this page. Your
-// report will appear on the right side.
-//
-// Additionally, you can toggle specific options in the Configure
-// menu.
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
-
 var bio = {
     'name': 'James McCarthy-Price',
     'role': 'Environmental Windsurfer',
@@ -21,7 +7,7 @@ var bio = {
         'github': 'https://github.com/JamesMCCP',
         'twitter': 'https://twitter.com/JamesMCCP',
         'location': 'Perth, Australia',
-        'website' : 'www.jamesmcp.com'
+        'website': 'www.jamesmcp.com'
     },
     'welcomeMessage': 'James McCarthy-Price is a renewable wave energy engineer and professional windsurfer. Currently working at Bombora Wave Power, James is working towards his dream of being part of a team to bring commercially viable renewable wave energy to the world. <p><br> James also is preparing to attend a number of professional windsurfing tour events in 2017 from Morocco to Hawaii.',
     'skills': ['Renewable Wave Energy',
@@ -33,7 +19,7 @@ var bio = {
     'location': 'Perth, Western Australia',
     'biopic': 'images/portrait_square.png',
     'display': function() {
-		$("#header").append(HTMLimgDiv);
+        $("#header").append(HTMLimgDiv);
         $(".img-div").append(HTMLbioPic.replace("%data%", bio.biopic));
         $("#header").append(HTMLnameDiv);
         $(".name-div").append(HTMLheaderName.replace("%data%", bio.name));
@@ -80,10 +66,10 @@ var education = {
         'url': 'www.udacity.com',
     }],
     'display': function() {
-	$("#education").append(HTMLeducationHeader);
+        $("#education").append(HTMLeducationHeader);
         for (e in education.schools) {
             $("#education").append(HTMLschoolStart);
-            var sch = HTMLschoolName.replace("%data%", education.schools[e].name) + HTMLschoolDegree.replace("%data%", education.schools[e].degree)
+            var sch = HTMLschoolName.replace("%data%", education.schools[e].name) + HTMLschoolDegree.replace("%data%", education.schools[e].degree);
             $(".education-entry:last").append(sch);
             $(".education-entry:last").append(HTMLschoolLocation.replace("%data%", education.schools[e].location));
             $(".education-entry:last").append(HTMLschoolDates.replace("%data%", education.schools[e].dates));
@@ -166,18 +152,18 @@ var projects = {
         'description': 'Volounteered for the Poland Indoor Event. Coordinated all athletes on live TV in a stadium of 35,000 people.',
         'images': ['images/poland.png']
     }],
-    'display': function() {     
-    		$("#projects").append(HTMLprojectHeader);
-        	for (p in projects.projects) {
-	            $("#projects").append(HTMLprojectStart);
-	            $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.projects[p].title));
-	            $(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.projects[p].date));
-	            $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.projects[p].description));
-	            for (i in projects.projects[p].images) {
-	            	$(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[p].images[i]));
-            	}
-           	}
-        },
+    'display': function() {
+        $("#projects").append(HTMLprojectHeader);
+        for (p in projects.projects) {
+            $("#projects").append(HTMLprojectStart);
+            $(".project-entry:last").append(HTMLprojectTitle.replace("%data%", projects.projects[p].title));
+            $(".project-entry:last").append(HTMLprojectDates.replace("%data%", projects.projects[p].date));
+            $(".project-entry:last").append(HTMLprojectDescription.replace("%data%", projects.projects[p].description));
+            for (i in projects.projects[p].images) {
+                $(".project-entry:last").append(HTMLprojectImage.replace("%data%", projects.projects[p].images[i]));
+            }
+        }
+    },
 };
 
 // Call display functions:
@@ -207,4 +193,6 @@ function locationizer(work_obj) {
     }
 
     return locationArray;
-};
+}
+
+main();
